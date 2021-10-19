@@ -43,6 +43,7 @@ const Home: React.FC = () => {
     trackerId.current = await Geolocation.watchPosition(
       {},
       (pos: Position | null) => {
+        console.log(pos);
         setGeo({ lat: pos?.coords.latitude, long: pos?.coords.longitude });
       }
     );
@@ -54,7 +55,7 @@ const Home: React.FC = () => {
           <IonTitle>React</IonTitle>
           <IonButtons slot="end">
             <IonButton onClick={addItem}>
-              <IonIcon slot="icon-only" icon={add}></IonIcon>
+              <IonIcon slot="icon-only" icon={add}/>
             </IonButton>
           </IonButtons>
         </IonToolbar>
@@ -62,7 +63,7 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">React</IonTitle>
+            <IonTitle size="large">React condense</IonTitle>
           </IonToolbar>
         </IonHeader>
 
